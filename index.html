@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCOK STORE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-k6kEfpVPUuFriw26loQeCsXAoQh2JqTiGQ&usqp=CAU'); /* Ganti dengan URL gambar Free Fire yang diinginkan */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .topup-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ff6f61;
+        }
+
+        label {
+            font-size: 14px;
+            color: #ddd;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+
+        select, input[type="text"], button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        select {
+            background-color: #fff;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            border-color: #ff6f61;
+        }
+
+        input[type="text"] {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ff6f61;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: white;
+            font-size: 16px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #f44336;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .topup-container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            select, input[type="text"], button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="topup-container">
+        <h2>TOPUP DM FF</h2>
+
+        <!-- Form Topup -->
+        <form id="topupForm" action="#" method="POST">
+            <div>
+                <label for="diamond">Pilih Jumlah Diamond</label>
+                <select id="diamond" name="diamond" required>
+                    <option value="5">5 Diamond</option>
+                    <option value="12">12 Diamond</option>
+                    <option value="50">50 Diamond</option>
+                    <option value="70">70 Diamond</option>
+                    <option value="100">100 Diamond</option>
+                    <option value="140">140 Diamond</option>
+                    <option value="210">210 Diamond</option>
+                    <option value="300">300 Diamond</option>
+                    <option value="355">355 Diamond</option>
+                    <option value="500">500 Diamond</option>
+                    <option value="720">720 Diamond</option>
+                    <option value="1000">1000 Diamond</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="ffId">Masukkan ID Akun Free Fire</label>
+                <input type="text" id="ffId" name="ffId" placeholder="Masukkan ID Akun FF" required>
+            </div>
+
+            <button type="submit">Topup Sekarang</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Atau hubungi kami untuk topup lebih lanjut: <a href="https://wa.me/6285608430903?text=Saya%20mau%20topup%20diamond%20Free%20Fire%20jumlah%20[DIAMOND]%20untuk%20akun%20ID%20[ID]" target="_blank">Hubungi via WhatsApp</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to update WhatsApp link with the selected diamond amount and entered ID
+        document.getElementById('topupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Get selected diamond and ID Akun FF
+            const diamond = document.getElementById('diamond').value;
+            const ffId = document.getElementById('ffId').value;
+
+            // Update the WhatsApp link dynamically
+            const waLink = `https://wa.me/6285608430903?text=Saya%20mau%20topup%20diamond%20Free%20Fire%20jumlah%20${diamond}%20untuk%20akun%20ID%20${ffId}`;
+            
+            // Open the WhatsApp link in a new tab
+            window.open(waLink, '_blank');
+        });
+    </script>
+
+</body>
+</html>
